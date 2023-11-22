@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./lunch-selector
+      dockerfile: Dockerfile
+    ports:
+      - "4242:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./lunchpicker
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
